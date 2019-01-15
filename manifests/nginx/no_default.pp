@@ -1,7 +1,7 @@
 class webserver::nginx::no_default (
 
 ) inherits webserver::nginx {
-  File["/etc/nginx/sites-available/default", "/etc/nginx/sites-enabled/default"] {
+  File["${webserver::nginx::config_dir}/sites-available/default", "${webserver::nginx::config_dir}/sites-enabled/default"] {
     ensure => absent,
   }
 }
